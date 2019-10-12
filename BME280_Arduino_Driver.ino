@@ -49,7 +49,6 @@ void setup()
   pressure = sensor_bme280.read_float_pres();
   humidity = sensor_bme280.read_float_humidity();
 
-  sprintf(payload, "%d\t%f\t%f", temperature, pressure, humidity);
   Serial.println("\n\nTemp\t\tHumidity\tPressure");
   Serial.println("----------------------------------------------\r");
   getData();
@@ -67,6 +66,7 @@ void loop()
 //-------------------------------------------------------------------------------------------------
 void getData()
 {
+  sensor_bme280.set_mode(bme280_forced_mode);
   temperature = sensor_bme280.read_float_temp_f();
   pressure = sensor_bme280.read_float_pres();
   humidity = sensor_bme280.read_float_humidity();
