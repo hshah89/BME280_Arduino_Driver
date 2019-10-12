@@ -60,6 +60,16 @@ void setup()
   Serial.print(" hPa \t\n");
 }
 
+// L O O P
+//-------------------------------------------------------------------------------------------------
+void loop()
+{
+  delay(10e3);
+  getData();
+}
+
+// F U N C T I O N S
+//-------------------------------------------------------------------------------------------------
 void getData()
 {
   temperature = sensor_bme280.read_float_temp_f();
@@ -71,12 +81,4 @@ void getData()
   Serial.print(" % \t");
   Serial.print(pressure);
   Serial.print(" hPa \t\n");
-}
-
-// L O O P
-//-------------------------------------------------------------------------------------------------
-void loop()
-{
-  delay(10e3);
-  getData();
 }
