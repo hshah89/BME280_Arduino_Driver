@@ -10,15 +10,13 @@
 
 // G L O B A L  V A R I A B L E S
 //-------------------------------------------------------------------------------------------------
-float pressure;
-float temperature;
-float humidity;
+float pressure;               // Storing measured pressure reading
+float temperature;            // Storing measured temperature reading
+float humidity;               // Storing measured humidity reading
 
-uint8_t chip_id;
+uint8_t chip_id;              // Storing BME280 Chip ID
 
-char payload[32];
-
-BME280 sensor_bme280;
+BME280 sensor_bme280;         
 
 // S E T U P
 //-------------------------------------------------------------------------------------------------
@@ -52,12 +50,7 @@ void setup()
   sprintf(payload, "%d\t%f\t%f", temperature, pressure, humidity);
   Serial.println("\n\nTemp\t\tHumidity\tPressure");
   Serial.println("----------------------------------------------\r");
-  Serial.print(temperature);
-  Serial.print(" F \t");
-  Serial.print(humidity);
-  Serial.print(" % \t");
-  Serial.print(pressure);
-  Serial.print(" hPa \t\n");
+  getData();
 }
 
 // L O O P
@@ -76,7 +69,7 @@ void getData()
   pressure = sensor_bme280.read_float_pres();
   humidity = sensor_bme280.read_float_humidity();
   Serial.print(temperature);
-  Serial.print(" F \t");
+  Serial.print(" ºF \t");
   Serial.print(humidity);
   Serial.print(" % \t");
   Serial.print(pressure);
