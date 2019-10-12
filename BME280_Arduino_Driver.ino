@@ -26,6 +26,8 @@ void setup()
   Wire.begin();
   Serial.begin(BAUD_RATE);
 
+  sensor_bme280.settings.i2c_addr = dev_addr;           // Set the device i2c address
+
   Serial.println("BME280 - Temperature, Humidity, and Pressure Sensor\n");
   Serial.print("Chip ID = 0x");
   Serial.print(sensor_bme280.begin_i2c(), HEX);
