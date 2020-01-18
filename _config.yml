@@ -2,7 +2,7 @@ title: Electronics Corner
 email: harit26+blog@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Thinkering with electronics
-baseurl: "BME280_Arduino_Driver" # the subpath of your site, e.g. /blog
+#baseurl: "" # the subpath of your site, e.g. /blog
 url: "hshah89.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  hshah89
