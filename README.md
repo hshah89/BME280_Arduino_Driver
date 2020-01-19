@@ -19,6 +19,6 @@ For this driver, I decided to go with I2C for a couple of reasons. **One**, it r
 
 <span>
 
-<img src="../images/bme280_arduino_driver/bme280_back.jpg" width="250"> <img src="../images/bme280_arduino_driver/bme280_front.jpg" width="250">
+<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250"> <img src="images/bme280_arduino_driver/bme280_front.jpg" width="250">
 
 </span>
