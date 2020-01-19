@@ -11,9 +11,7 @@ The sensor can be communicated via:
 
 For this driver, I decided to go with I2C for a couple of reasons. **One**, it requires the least amount of wires and **Two**, even at I2C the device supports 3.4 MHz speed.
 
-<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px">
-
-<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px">
+<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px"> <img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px">
 
 For this example, I will be using I2C to communicate with the sensor. When using I2C, the **CSB** pin is tied to **VCC**. The **SDO** pin is connected to GND, setting the device address to **0x76**.
 
