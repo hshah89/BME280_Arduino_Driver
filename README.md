@@ -117,8 +117,6 @@ The device also supports 2 different operating modes: **Normal** and **Forced**.
 ``` cpp
 void setup()
 {
-
-
   Wire.begin();
   Serial.begin(BAUD_RATE);
 
