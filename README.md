@@ -11,9 +11,9 @@ The sensor can be communicated via:
 
 For this driver, I decided to go with I2C for a couple of reasons. **One**, it requires the least amount of wires and **Two**, even at I2C the device supports 3.4 MHz speed.
 
-![post-img](images/bme280_arduino_driver/bme280_back.jpg){:width="250px" height="250px"}
+<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px">
 
-![post-img](images/bme280_arduino_driver/bme280_front.jpg){:width="250px" height="250px"}
+<img src="images/bme280_arduino_driver/bme280_back.jpg" width="250px" height="250px">
 
 For this example, I will be using I2C to communicate with the sensor. When using I2C, the **CSB** pin is tied to **VCC**. The **SDO** pin is connected to GND, setting the device address to **0x76**.
 
@@ -83,3 +83,24 @@ The table also shows the connection to an Arduino.
 							</tr>
 						</tbody>
 					</table>
+
+Link to my BME280 drivers for the arduino can be found on my github page: [Here](https://github.com/hshah89/BME280_Arduino_Driver)
+
+The first part is to include the BME280 library.
+
+The next part is to define the baudrate for the serial port and the device address. In this case, the device address is set to 0x76.
+
+After setting up the library, baudrate, and the device address, declare the global variables that will be used throughout the program. At a minimum, you need to declare the object BME280 to use the sensor library.
+
+Next is to write the setup function. Here, the I2C bus and the Serial port are initialized. The BME280 sensor is started up as well. The I2C address is set based on the connections of the **SDO** pin. We look for the Chip ID. It should return back in hex **0x60**. If it does not, check the connections to the arduino.
+After that, the oversampling settings for the temperature, pressure, and humidity readings are set.
+
+The device also supports 2 different operating modes: **Normal** and **Forced**. In **Normal** mode, the sensor is always on. In **Forced** mode, when a reading is requested, the device turns on, returns the requested reading and then goes back to sleep. Forced mode is useful when running the sensor from a battery.
+
+The **getData()** arduino function is shown below. It gets the temperature, humidity, and pressure. This function is declared so you don't have to keep repeating same commands over and over.
+
+Finally, the loop function is configured. You call the **getData()** function and then delay it a certain amount.
+
+If everything runs correctly, you should get the following output after programming the arduino board:
+
+That should get you going with the sensor. Now that it's working with the Arduino board, you can use this sensor with any project. Stay tuned for a projected using this sensor.
