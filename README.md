@@ -102,3 +102,5 @@ Finally, the loop function is configured. You call the **getData()** function an
 If everything runs correctly, you should get the following output after programming the arduino board:
 
 That should get you going with the sensor. Now that it's working with the Arduino board, you can use this sensor with any project. Stay tuned for a projected using this sensor.
+
+<script src="https://github.com/hshah89/BME280_Arduino_Driver/blob/master/bme280.cpp"></script>
